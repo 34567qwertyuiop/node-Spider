@@ -6,7 +6,13 @@ var interface=require('../interface.json')
 
 module.exports = function (app) {
 
-    app.get("/keshihuahoutaiAdministrationsystem/index", function(req,res,next){
+    //随机生产
+    var randomNum=Math.floor(Math.random()*100000000000)
+    console.log('可视化界面的访问地址连接')
+    console.log('--------------------------------------------------------')
+    console.log("/keshihuahoutaiAdministrationsystem/index/"+randomNum)
+    console.log('--------------------------------------------------------')
+    app.get("/keshihuahoutaiAdministrationsystem/index/"+randomNum, function(req,res,next){
         res.render('index_1',{
             interface: interface.servers,
             config: config

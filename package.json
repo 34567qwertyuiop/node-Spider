@@ -17,5 +17,8 @@
     "morgan": "~1.9.0",
     "request": "^2.83.0",
     "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "express-session": "^1.15.6"
   }
 }
