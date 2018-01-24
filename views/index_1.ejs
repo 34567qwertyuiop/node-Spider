@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/css.css" type="text/css">
+</head>
+<body>
+<header>
+    <h1>申办配置可视化界面</h1>
+</header>
+<nav>
+    <ul class="configure_tab">
+        <li data-id="interface" class="active">服务器配置</li>
+        <li data-id="config">基础配置</li>
+    </ul>
+</nav>
+<main>
+    <div class="configure_box">
+        <ul class="configure_server">
+            <%for(var i=0;i<interface.length;i++){%>
+            <li>
+                <h2><%=i+1%>、<%=interface[i].name%>(<%=interface[i].id%>)</h2>
+                <label>host：<input type="text" name="host" value="<%=interface[i].host%>" /></label><label>port：<input type="text" name="port" value="<%=interface[i].port%>" /></label>
+            </li>
+            <% }%>
+        </ul>
+        <ul class="configure_config hide">
+            <%for(var i=0;i<config.config.length;i++){%>
+            <li>
+                <label for="<%=config.config[i].id%>"><span><%=config.config[i].name%>：</span><%if(config.config[i].type=='select'){%>
+                    <select name="<%=config.config[i].id%>" id="<%=config.config[i].id%>" class="list">
+                        <%for(var n=0;n<config.config[i].options.length;n++){%>
+                        <option value="<%=config.config[i].options[n].optionsCode%>"
+                                <%if(config.config[i].options[n].optionsCode==config.config[i].value){ %> selected="selected"<%}%> >
+                            <%=config.config[i].options[n].optionsName%>
+                        </option>
+                        <%}%>
+                    </select>
+                    <%}else if(config.config[i].type=='text'){%>
+                    <input type="text" name="<%=config.config[i].id%>" id="<%=config.config[i].id%>" value="<%=config.config[i].value%>" class="list">
+                    <%}else if(config.config[i].type=='radio'){%>
+                    <select name="<%=config.config[i].id%>" id="<%=config.config[i].id%>" class="list">
+                        <option value="true" <%if(config.config[i].value=='true'){%>selected="selected"<%}%>>
+                            是
+                        </option>
+                        <option value="false" <%if(config.config[i].value=='false'){%>selected="selected"<%}%>>
+                            否
+                        </option>
+                    </select>
+                    <%}%></label>
+            </li>
+            <% }%>
+        </ul>
+        <section class="main_tab">
+            <a id="btn" href="javascript://;">确定修改</a>
+        </section>
+    </div>
+</main>
+<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="/javascript/js.js"></script>
+</body>
+</html>

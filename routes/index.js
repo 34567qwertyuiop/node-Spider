@@ -8,7 +8,8 @@ module.exports = function (app) {
 
     app.get("/keshihuahoutaiAdministrationsystem/index", function(req,res,next){
         res.render('index_1',{
-            data:interface.servers
+            interface: interface.servers,
+            config: config
         });
     })
 

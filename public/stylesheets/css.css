@@ -1,0 +1,142 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    font-size:14px;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    vertical-align: baseline;
+    outline: none;
+}
+.hide{
+    display: none;
+}
+body,html{
+    height:100%;
+    background:#f5f5f5;
+}
+header{
+    text-align: center;
+}
+header h1{
+    font-size:24px;
+    color:#63B8FF;
+    line-height: 40px;
+    padding-top: 30px;
+}
+nav{
+    width:100%;
+    border-bottom:1px solid #ccc;
+}
+main{
+    width:100%;
+    height:calc(100% - 142px);
+    max-width: 1000px;
+    margin:0 auto;
+    box-sizing: border-box;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+    background:#fff;
+    position: relative;
+}
+.configure_tab{
+    width:100%;
+    max-width:1000px;
+    margin:30px auto 0;
+    display:flex;
+}
+.configure_tab li{
+    flex: 1;
+    line-height:40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px 5px 0 0;
+    border-bottom:0;
+    cursor: pointer;
+    background:#fff;
+}
+.configure_tab li.active{
+    background:#5CACEE;
+    color:#fff;
+}
+.configure_tab li:hover{
+    background:#5CACEE;
+    color:#fff;
+}
+.configure_text input{
+    vertical-align: middle;
+    height:25px;
+    text-indent:4px;
+}
+.configure_select select{
+    width:35%;
+    height:30px;
+    text-indent: 2px;
+    vertical-align: middle;
+}
+.main_tab a:hover{
+    color:#4F94CD;
+}
+.configure_box{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow: auto;
+}
+.configure_server li{
+    width:80%;
+    padding: 20px 10% 0;
+    text-align: center;
+}
+.configure_server h2{
+    text-align: left;
+    text-indent: 75px;
+}
+.configure_server label{
+    display:inline-block;
+    padding: 20px 30px 10px 30px;
+}
+.configure_server input{
+    margin:0 10px;
+    text-indent: 5px;
+    height:24px;
+}
+.main_tab{
+    width:100%;
+    padding: 40px 0;
+    text-align: center;
+}
+.main_tab a{
+    width: 80px;
+    line-height: 30px;
+    font-size:16px;
+    display: block;
+    margin:0 auto;
+    border-radius: 5px;
+    background: #00B7FF;
+    color: #fff;
+}
+
+.configure_config{
+    padding-top: 20px;
+}
+.configure_config li{
+    width:50%;
+    line-height: 60px;
+    height:60px;
+    float:left;
+}
+.configure_config span{
+    display: inline-block;
+    width:280px;
+    float: left;
+    text-align: right;
+}
+.configure_config input[type=text],.configure_config select{
+    margin:0 5px;
+    width:175px;
+    height:24px;
+}
