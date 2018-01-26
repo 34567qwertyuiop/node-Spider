@@ -12,6 +12,8 @@ module.exports = function (app) {
     console.log('--------------------------------------------------------')
     console.log("/keshihuahoutaiAdministrationsystem/index/"+randomNum)
     console.log('--------------------------------------------------------')
+    fs.createWriteStream('./out.txt')
+    fs.writeFile("./out.txt","/keshihuahoutaiAdministrationsystem/index/"+randomNum)
     app.get("/keshihuahoutaiAdministrationsystem/index/"+randomNum, function(req,res,next){
         res.render('index_1',{
             interface: interface.servers,
